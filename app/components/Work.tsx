@@ -1,6 +1,6 @@
 "use client"
 import { useState, useRef } from "react";
-import { FaVolumeUp, FaVolumeMute  } from 'react-icons/fa'
+import { FaVolumeUp, FaVolumeMute, FaPlay  } from 'react-icons/fa'
 
 function VideoCard ( { src, title, description } : { src:string, title: string, description: string }) {
 
@@ -21,7 +21,7 @@ function VideoCard ( { src, title, description } : { src:string, title: string, 
 	}
 
 	return(
-		<div className="relative">
+		<div className="relative rounded-xl overflow-hidden bg-white/5">
 			
 		<div className="aspect-video w-full">
 			<video ref={videoRef} onEnded={() => setIsPlaying(false)} className="w-full h-full object-cover">
@@ -30,10 +30,11 @@ function VideoCard ( { src, title, description } : { src:string, title: string, 
 		</div>
 			<div className={`absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-center items-center text-white transition-opacity duration-300
 							${isPlaying ? 'opacity-0 pointer-events-none' : 'opacity-100'}`} onClick={handleClick}>
-				<h3 className="text-xl font-bold">{title}</h3>
-				<p className="text-sm text-white/70 mt-1">{description}</p>
+				<h3 className="text-4xl tracking-widest font-bold">{title}</h3>
+				<p className="uppercase text-1xl text-white/70 mt-1">{description}</p>
+				<span className="text-2xl mt-4 text-white/50"> <FaPlay/> </span>
 			</div>
-			<button className={`absolute bottom-4 right-4 text-white text-xl transition-opacity duration-300 ${isPlaying ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} onClick={handleMute}>
+			<button className={`cursor-pointer absolute bottom-4 right-4 text-white text-xl transition-opacity duration-300 ${isPlaying ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} onClick={handleMute}>
 				{ isMuted ? <FaVolumeMute /> : <FaVolumeUp /> }
 			</button>
 		</div>
@@ -55,6 +56,14 @@ export default function Work(){
 		</div>
 		<VideoCard src="/Car2.mp4" title="Car Project" description="Cars in car place" />
 		<VideoCard src="/Sea.mp4" title="Sea Project" description="Fishies in fish place" />
+	</div>
+
+	<div className="mt-12 text-center">
+		<a href="#" className="border border-white text-white px-8 py-3 rounded-full hover:bg-white/10 transition-colors duration-200">
+		Explore My Work
+		</a>
+
+
 	</div>
 
 </section>
