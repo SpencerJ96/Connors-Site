@@ -46,7 +46,7 @@ function VideoCard ( { src, title, description } : { src:string, title: string, 
 
 export default function Work(){
 	return(
-<section id="work" className="bg-gradient-to-b from-black to-stone-900 py-20 px-8">
+<section id="projects" className="bg-gradient-to-b from-black to-stone-900 py-20 px-8">
 		<h2 className="text-center text-white text-6xl font-display tracking-widest text-center mb-2">My Work</h2>
 		<div className="w-16 h-0.5 bg-accent mx-auto mt-2 mb-10"></div>
 
