@@ -3,6 +3,7 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import Nav from './components/Nav'
 import {Bebas_Neue} from "next/font/google"
+import Footer from './components/Footer'
 
 
 
@@ -38,6 +39,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
 		<Nav />
 		{children}
+		<Footer />
 	</body>
   </html>
   );
