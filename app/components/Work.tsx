@@ -30,8 +30,8 @@ function VideoCard ( { src, title, description } : { src:string, title: string, 
 		</div>
 			<div className={`absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-center items-center text-white transition-opacity duration-300
 							${isPlaying ? 'opacity-0 pointer-events-none' : 'opacity-100'}`} onClick={handleClick}>
-				<h3 className="text-4xl tracking-widest font-bold">{title}</h3>
-				<p className="uppercase text-1xl text-white/70 mt-1">{description}</p>
+				<h3 className="text-lg md:text-4xl tracking-widest font-bold">{title}</h3>
+				<p className=" text-sm md:uppercase md:text-1xl text-white/70 mt-1">{description}</p>
 				<span className="text-2xl mt-4 text-white/50"> <FaPlay/> </span>
 			</div>
 			<button className={`cursor-pointer absolute bottom-4 right-4 text-white text-xl transition-opacity duration-300 ${isPlaying ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} onClick={handleMute}>
@@ -50,8 +50,8 @@ export default function Work(){
 		<h2 className="text-center text-white text-6xl font-display tracking-widest text-center mb-2">My Work</h2>
 		<div className="w-16 h-0.5 bg-accent mx-auto mt-2 mb-10"></div>
 
-	<div className="grid grid-cols-2 gap-8">
-		<div className="col-span-2">
+	<div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8">
+		<div className="col-span-1 md:col-span-2">
 		<VideoCard src="/Dog.mp4" title="Dog Project" description="Dogs doing dog stuff"/>
 		</div>
 		<VideoCard src="/Car2.mp4" title="Car Project" description="Cars in car place" />
